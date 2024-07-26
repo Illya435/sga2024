@@ -1,9 +1,10 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class Playercontroleur : MonoBehaviour
 
 {
+    [SerializeField] private float VelocityY;
     [SerializeField] private float speed;
     private Rigidbody2D rb;
     private Animator anim;
@@ -20,7 +21,8 @@ public class Playercontroleur : MonoBehaviour
     {
          if (collision.gameObject.tag == "obstacles")
         {
-            Debug.Log("Do something else here");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // changer truc parenthèse par numéro scène game over
         }
     }
     // Update is called once per frame
@@ -31,13 +33,12 @@ public class Playercontroleur : MonoBehaviour
             Debug.Log("NON");
             rb.gravityScale = rb.gravityScale * -1f;
             rb.velocity /= 2;
-            sr.flipY = !sr.flipY;
+            //sr.flipY = !sr.flipY;
         }
-        /*   // move rl
-           float crtMove = Input.GetAxis("Horizontal") * speed;
-           rb.velocity = new Vector2(crtMove, rb.velocity.y);
-           anim.SetFloat("Speed", crtMove);
-           sr.flipX = crtMove < 0;
-       }*/
+
+            anim.SetFloat("VelocityY", rb.velocity.y);
+
+       
+        
     }
 }

@@ -29,6 +29,9 @@ public class ParralaxSytsem : MonoBehaviour
     //[SerializeField] GameObject level1Prefab;
     //[SerializeField] GameObject level2Prefab;
     //[SerializeField] GameObject level3Prefab;
+    private float timer = 0;
+    private const float timetospeedup = 10;
+    private float boostspeed = 1.0f;
 
     Camera cam;
     float offsetX = 0;
@@ -60,6 +63,12 @@ public class ParralaxSytsem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
+        if (timer >= timetospeedup)
+        {
+            boostspeed += 0.2f;
+            timer = 0;
+        }
         //float AxeX = cam.transform.position.x - offsetX;
         //level1.position = new Vector3(AxeX / 2 + level1_X, level1.position.y, level1.position.z);
         //level2.position = new Vector3(AxeX / 3 + level2_X, level2.position.y, level2.position.z);
@@ -71,8 +80,8 @@ public class ParralaxSytsem : MonoBehaviour
             Transform temp = levels1[i];
             GameObject chunk = ChunkObstacle[i];
 
-            chunk.transform.position += Vector3.left * Time.deltaTime * speedLevel1;
-                temp.position += Vector3.left * Time.deltaTime * speedLevel1;
+            chunk.transform.position += Vector3.left * Time.deltaTime * speedLevel1 * boostspeed;
+                temp.position += Vector3.left * Time.deltaTime * speedLevel1 * boostspeed;
             if (temp.position.x < deletePosLevel1)
             {
                
@@ -92,7 +101,7 @@ public class ParralaxSytsem : MonoBehaviour
         {
             Transform temp = levels2[u];
 
-            temp.position += Vector3.left * Time.deltaTime * speedLevel2;
+            temp.position += Vector3.left * Time.deltaTime * speedLevel2 * boostspeed;
             if(temp.position.x < deletePosLevel2)
             {
                 temp.position = SpawnPosition2.transform.position;
@@ -104,7 +113,7 @@ public class ParralaxSytsem : MonoBehaviour
         {
             Transform temp = levels3[v];
 
-            temp.position += Vector3.left * Time.deltaTime * speedLevel3;
+            temp.position += Vector3.left * Time.deltaTime * speedLevel3 * boostspeed;
             if (temp.position.x < deletePosLevel3)
             {
                 temp.position = SpawnPosition3.transform.position;
