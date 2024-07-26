@@ -36,9 +36,9 @@ public class ParralaxSytsem : MonoBehaviour
     Camera cam;
     float offsetX = 0;
 
-    float[] level1_Y = new float[3];
-    float[] level2_Y = new float[3];
-    float[] level3_Y = new float[3];
+    //float[] level1_Y = new float[3];
+    //float[] level2_Y = new float[3];
+    //float[] level3_Y = new float[3];
 
 
     // Start is called before the first frame update
@@ -47,11 +47,12 @@ public class ParralaxSytsem : MonoBehaviour
         cam = Camera.main;
         offsetX = cam.transform.position.x;
 
-        ChunkObstacle = new GameObject[3];
-        for (int i = 0; i < 3; i++)
+        ChunkObstacle = new GameObject[11];
+        for (int i = 0; i <11; i++)
         {
             ChunkObstacle[i] = GameObject.Instantiate(prefabChunksObstacle[0]);
-            ChunkObstacle[i].transform.position = levels1[i].transform.position;
+            ChunkObstacle[i].transform.position =  ( new Vector3(4.8525f * i , -1.75f,0) );
+
         }
 
         //level1_Y = level1.position.y;
@@ -72,32 +73,45 @@ public class ParralaxSytsem : MonoBehaviour
         //float AxeX = cam.transform.position.x - offsetX;
         //level1.position = new Vector3(AxeX / 2 + level1_X, level1.position.y, level1.position.z);
         //level2.position = new Vector3(AxeX / 3 + level2_X, level2.position.y, level2.position.z);
-        //level3.position = new Vector3(AxeX / 4 + level3_X, level3.position.y, level3.position.z);
+        //level3.position = new Vector3(AxeX / 4 + lev
+        //el3_X, level3.position.y, level3.position.z);
         //Debug.Log(AxeX);
-        GameObject toRemove = null;
+        GameObject toRemove1 = null;
+
+        for (int i = 0; i < 11; i++)
+        {
+            GameObject chunk = ChunkObstacle[i];
+            chunk.transform.position += Vector3.left * Time.deltaTime * speedLevel1 * boostspeed;
+            if (chunk.transform.position.x < deletePosLevel1)
+            {
+                toRemove1 = chunk;
+                ChunkObstacle[i] = GenerateChunk();
+                ChunkObstacle[i].transform.position = SpawnPosition.transform.position  + new Vector3(0, -4.9f, 0);
+            }
+            if (toRemove1 != null)
+                Destroy(toRemove1);
+
+        }
+
         for (int i = 0; i < levels1.Length; i++)
         {
             Transform temp = levels1[i];
-            GameObject chunk = ChunkObstacle[i];
 
-            chunk.transform.position += Vector3.left * Time.deltaTime * speedLevel1 * boostspeed;
-                //float y = 
-                temp.position += Vector3.left * Time.deltaTime * speedLevel1 * boostspeed;
+
+            //float y = 
+            temp.position += Vector3.left * Time.deltaTime * speedLevel1 * boostspeed;
             if (temp.position.x < deletePosLevel1)
             {
-               
-                toRemove = chunk;
-                ChunkObstacle[i] = GenerateChunk();
-                ChunkObstacle[i].transform.position = SpawnPosition.transform.position;
+
                 temp.position = SpawnPosition.transform.position;
             }
             levels1[i] = temp;
 
         }
         
-        if(toRemove != null)
-            Destroy(toRemove);
-       
+        
+  
+
         for (int u = 0; u < levels2.Length; u++)
         {
             Transform temp = levels2[u];
