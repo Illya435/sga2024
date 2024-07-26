@@ -5,6 +5,7 @@ using UnityEngine;
 public class ParralaxSytsem : MonoBehaviour
 
 {
+    GameObject[] ChunkObstacle;
     [SerializeField] Transform[] levels1 = new Transform[3];
     //[SerializeField] Transform level2;
     //[SerializeField] Transform level3;
@@ -24,7 +25,7 @@ public class ParralaxSytsem : MonoBehaviour
     [SerializeField] float speedLevel3 = 1;
     [SerializeField] GameObject SpawnPosition3;
 
-
+    [SerializeField] List<GameObject> prefabChunksObstacle;
     //[SerializeField] GameObject level1Prefab;
     //[SerializeField] GameObject level2Prefab;
     //[SerializeField] GameObject level3Prefab;
@@ -35,11 +36,21 @@ public class ParralaxSytsem : MonoBehaviour
     float level1_X;
     float level2_X;
     float level3_X;
+
+
     // Start is called before the first frame update
     void Start()
     {
         cam = Camera.main;
         offsetX = cam.transform.position.x;
+
+        ChunkObstacle = new GameObject[3];
+        for (int i = 0; i < 3; i++)
+        {
+            ChunkObstacle[i] = GameObject.Instantiate(prefabChunksObstacle[0]);
+            ChunkObstacle[i].transform.position = levels1[i].transform.position;
+        }
+
         //level1_X = level1.position.x;
         //level2_X = level2.position.x;
         //level3_X = level3.position.x;
@@ -54,18 +65,28 @@ public class ParralaxSytsem : MonoBehaviour
         //level2.position = new Vector3(AxeX / 3 + level2_X, level2.position.y, level2.position.z);
         //level3.position = new Vector3(AxeX / 4 + level3_X, level3.position.y, level3.position.z);
         //Debug.Log(AxeX);
-
+        GameObject toRemove = null;
         for (int i = 0; i < levels1.Length; i++)
         {
             Transform temp = levels1[i];
+            GameObject chunk = ChunkObstacle[i];
 
-            temp.position += Vector3.left * Time.deltaTime * speedLevel1;
+            chunk.transform.position += Vector3.left * Time.deltaTime * speedLevel1;
+                temp.position += Vector3.left * Time.deltaTime * speedLevel1;
             if (temp.position.x < deletePosLevel1)
             {
+               
+                toRemove = chunk;
+                ChunkObstacle[i] = GenerateChunk();
+                ChunkObstacle[i].transform.position = SpawnPosition.transform.position;
                 temp.position = SpawnPosition.transform.position;
             }
             levels1[i] = temp;
+
         }
+        
+        if(toRemove != null)
+            Destroy(toRemove);
        
         for (int u = 0; u < levels2.Length; u++)
         {
@@ -100,5 +121,11 @@ public class ParralaxSytsem : MonoBehaviour
         Gizmos.DrawSphere(new Vector3(deletePosLevel2, 0, 0), 1);
         Gizmos.color = Color.green;
         Gizmos.DrawSphere(new Vector3(deletePosLevel2, 0, 0), 1);
+    }
+
+    GameObject GenerateChunk()
+    {
+        int rdm = Random.Range(0, prefabChunksObstacle.Count);
+        return GameObject.Instantiate(prefabChunksObstacle[rdm]);
     }
 }
