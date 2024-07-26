@@ -30,7 +30,7 @@ public class Playercontroleur : MonoBehaviour
         {
             Debug.Log("NON");
             rb.gravityScale = rb.gravityScale * -1f;
-            rb.velocity = Vector3.zero;
+            rb.velocity /= 2;
             sr.flipY = !sr.flipY;
         }
         /*   // move rl

@@ -1436,7 +1436,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 10
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1584,6 +1584,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 39342444614936038, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
+      propertyPath: speedLevel1
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 39342444614936038, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
       propertyPath: SpawnPosition
       value: 
       objectReference: {fileID: 407482148}
@@ -1615,6 +1619,10 @@ PrefabInstance:
       propertyPath: prefabChunksObstacle.Array.data[1]
       value: 
       objectReference: {fileID: 8916173371930212479, guid: 1486d62d107485e44933833633cac693, type: 3}
+    - target: {fileID: 46142730311134533, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
+      propertyPath: m_SortingOrder
+      value: -8
+      objectReference: {fileID: 0}
     - target: {fileID: 201892859576412485, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
       propertyPath: m_LocalPosition.y
       value: -4.24
@@ -1663,6 +1671,10 @@ PrefabInstance:
       propertyPath: m_FlipY
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3761962360431188709, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
+      propertyPath: m_SortingOrder
+      value: -9
+      objectReference: {fileID: 0}
     - target: {fileID: 4165476995408964213, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
       propertyPath: m_LocalPosition.y
       value: 8.5
@@ -1670,6 +1682,22 @@ PrefabInstance:
     - target: {fileID: 4664191795795480024, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
       propertyPath: m_Name
       value: Parralax
+      objectReference: {fileID: 0}
+    - target: {fileID: 6994070705705491031, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
+      propertyPath: m_SortingOrder
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7479402501682180999, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
+      propertyPath: m_SortingOrder
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896051040150644722, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
+      propertyPath: m_SortingOrder
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7978053195551438982, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
+      propertyPath: m_SortingOrder
+      value: -9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
