@@ -26,6 +26,13 @@ public class Playercontroleur : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            Debug.Log("NON");
+            rb.gravityScale = rb.gravityScale * -1f;
+            rb.velocity = Vector3.zero;
+            sr.flipY = !sr.flipY;
+        }
         /*   // move rl
            float crtMove = Input.GetAxis("Horizontal") * speed;
            rb.velocity = new Vector2(crtMove, rb.velocity.y);
