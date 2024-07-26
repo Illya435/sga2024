@@ -36,9 +36,9 @@ public class ParralaxSytsem : MonoBehaviour
     Camera cam;
     float offsetX = 0;
 
-    float level1_X;
-    float level2_X;
-    float level3_X;
+    float[] level1_Y = new float[3];
+    float[] level2_Y = new float[3];
+    float[] level3_Y = new float[3];
 
 
     // Start is called before the first frame update
@@ -54,9 +54,9 @@ public class ParralaxSytsem : MonoBehaviour
             ChunkObstacle[i].transform.position = levels1[i].transform.position;
         }
 
-        //level1_X = level1.position.x;
-        //level2_X = level2.position.x;
-        //level3_X = level3.position.x;
+        //level1_Y = level1.position.y;
+        //level2_Y = level2.position.y;
+        //level3_Y = level3.position.y;
 
     }
 
@@ -81,6 +81,7 @@ public class ParralaxSytsem : MonoBehaviour
             GameObject chunk = ChunkObstacle[i];
 
             chunk.transform.position += Vector3.left * Time.deltaTime * speedLevel1 * boostspeed;
+                //float y = 
                 temp.position += Vector3.left * Time.deltaTime * speedLevel1 * boostspeed;
             if (temp.position.x < deletePosLevel1)
             {

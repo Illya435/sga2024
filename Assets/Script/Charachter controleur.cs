@@ -21,7 +21,8 @@ public class Playercontroleur : MonoBehaviour
     {
          if (collision.gameObject.tag == "obstacles")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            GameObject.FindFirstObjectByType<MenuSystem>().LoadScene("GameOver");
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         // changer truc parenthèse par numéro scène game over
         }
     }
