@@ -1478,7 +1478,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 7
+  m_GravityScale: 9
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1611,7 +1611,7 @@ PrefabInstance:
       objectReference: {fileID: 8916173371930212479, guid: 1486d62d107485e44933833633cac693, type: 3}
     - target: {fileID: 39342444614936038, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
       propertyPath: prefabChunksObstacle.Array.size
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 39342444614936038, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
       propertyPath: prefabChunksObstacle.Array.data[0]
@@ -1624,13 +1624,45 @@ PrefabInstance:
     - target: {fileID: 39342444614936038, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
       propertyPath: prefabChunksObstacle.Array.data[2]
       value: 
-      objectReference: {fileID: 7802756732265995554, guid: 8f9c9102953e3be47abf3f0a2048fb7d, type: 3}
+      objectReference: {fileID: 6123473491726191478, guid: 5cb522f327b96d34aabb25928a3bc161, type: 3}
     - target: {fileID: 39342444614936038, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
       propertyPath: prefabChunksObstacle.Array.data[3]
       value: 
-      objectReference: {fileID: 1498399626356866083, guid: b576b2504a81d114398dcfe88e41e941, type: 3}
+      objectReference: {fileID: 4159128513896784262, guid: d1d36609fcb3f674fa1d7154655b59d3, type: 3}
     - target: {fileID: 39342444614936038, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
       propertyPath: prefabChunksObstacle.Array.data[4]
+      value: 
+      objectReference: {fileID: 5173180339714202171, guid: fd5d9077c76b39848a989b57e01f5969, type: 3}
+    - target: {fileID: 39342444614936038, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
+      propertyPath: prefabChunksObstacle.Array.data[5]
+      value: 
+      objectReference: {fileID: 1498399626356866083, guid: b576b2504a81d114398dcfe88e41e941, type: 3}
+    - target: {fileID: 39342444614936038, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
+      propertyPath: prefabChunksObstacle.Array.data[6]
+      value: 
+      objectReference: {fileID: 7556991514110064793, guid: f791a881df401b742bae90ee1dfe8a11, type: 3}
+    - target: {fileID: 39342444614936038, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
+      propertyPath: prefabChunksObstacle.Array.data[7]
+      value: 
+      objectReference: {fileID: 6873593782573249695, guid: 87eebb14d4e568a48a2524c7ad048cc6, type: 3}
+    - target: {fileID: 39342444614936038, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
+      propertyPath: prefabChunksObstacle.Array.data[8]
+      value: 
+      objectReference: {fileID: 7829914161122439994, guid: 0a341cbd9edc3184096aaa66c6239437, type: 3}
+    - target: {fileID: 39342444614936038, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
+      propertyPath: prefabChunksObstacle.Array.data[9]
+      value: 
+      objectReference: {fileID: 6123473491726191478, guid: 5cb522f327b96d34aabb25928a3bc161, type: 3}
+    - target: {fileID: 39342444614936038, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
+      propertyPath: prefabChunksObstacle.Array.data[10]
+      value: 
+      objectReference: {fileID: 7802756732265995554, guid: 8f9c9102953e3be47abf3f0a2048fb7d, type: 3}
+    - target: {fileID: 39342444614936038, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
+      propertyPath: prefabChunksObstacle.Array.data[11]
+      value: 
+      objectReference: {fileID: 8853955829262480489, guid: ccc00c8b8479a6e4d9ddf20ee2426ca7, type: 3}
+    - target: {fileID: 39342444614936038, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
+      propertyPath: prefabChunksObstacle.Array.data[12]
       value: 
       objectReference: {fileID: 6123473491726191478, guid: 5cb522f327b96d34aabb25928a3bc161, type: 3}
     - target: {fileID: 46142730311134533, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
