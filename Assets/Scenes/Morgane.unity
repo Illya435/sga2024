@@ -1611,7 +1611,7 @@ PrefabInstance:
       objectReference: {fileID: 8916173371930212479, guid: 1486d62d107485e44933833633cac693, type: 3}
     - target: {fileID: 39342444614936038, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
       propertyPath: prefabChunksObstacle.Array.size
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 39342444614936038, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
       propertyPath: prefabChunksObstacle.Array.data[0]
@@ -1620,11 +1620,11 @@ PrefabInstance:
     - target: {fileID: 39342444614936038, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
       propertyPath: prefabChunksObstacle.Array.data[1]
       value: 
-      objectReference: {fileID: 5406395443443497321, guid: 43b54928f319add4b984d23c5957e62a, type: 3}
+      objectReference: {fileID: 6873593782573249695, guid: 87eebb14d4e568a48a2524c7ad048cc6, type: 3}
     - target: {fileID: 39342444614936038, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
       propertyPath: prefabChunksObstacle.Array.data[2]
       value: 
-      objectReference: {fileID: 6123473491726191478, guid: 5cb522f327b96d34aabb25928a3bc161, type: 3}
+      objectReference: {fileID: 7829914161122439994, guid: 0a341cbd9edc3184096aaa66c6239437, type: 3}
     - target: {fileID: 39342444614936038, guid: 3a2ca02b3249e2a499462ae2890d5f9f, type: 3}
       propertyPath: prefabChunksObstacle.Array.data[3]
       value: 

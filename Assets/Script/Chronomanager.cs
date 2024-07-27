@@ -20,3 +20,4 @@ public class Chronomanager : MonoBehaviour
         chronotext.text = chrono.ToString();
     }
 }
+ 
